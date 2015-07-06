@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.czt.saisam.unittest"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- 测试权限 -->
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION"/>
+    <!-- 记住这个一要放在application外面，不然会出现配置错误 信息 -->
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.czt.saisam.unittest"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- 测试链接库 -->
+        <!--user-library 元素说明：指定一个共享库，应用程序需要连接的。默认情况下会连接所有的 Android 库 -->
+        <!--然而一些软件包（如地图和 AWT）是不会自动连接独立的库，因此需要显示确定哪些库需要包含这些特定的包代码文件-->
+        <uses-library android:name="android.test.runner"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
