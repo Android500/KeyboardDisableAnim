@@ -20,7 +20,7 @@
 
         <!-- 测试链接库 -->
         <!--user-library 元素说明：指定一个共享库，应用程序需要连接的。默认情况下会连接所有的 Android 库 -->
-        <!--然而一些软件包（如地图和 AWT）是不会自动连接独立的库，因此需要显示确定哪些库需要包含这些特定的包代码文件-->
+        <!--然而一些软件包（如地图和 AWT）是不会自动连接独立的库，因此需要注明以确定哪些库需要包含这些特定的包代码文件-->
         <uses-library android:name="android.test.runner"/>
         <activity
             android:name=".MainActivity"
