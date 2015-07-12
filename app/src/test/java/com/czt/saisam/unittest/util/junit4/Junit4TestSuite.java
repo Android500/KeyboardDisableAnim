@@ -4,7 +4,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * Junit4 ±ã½Ý´ò°ü²âÊÔ
+ * Junit4 ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½
+ *
  * @author zhitao
  * @since 2015-07-06 23:09
  */

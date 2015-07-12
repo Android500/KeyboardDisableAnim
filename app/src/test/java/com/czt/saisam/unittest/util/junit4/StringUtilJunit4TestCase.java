@@ -11,8 +11,6 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 
 /**
- * ²ÎÊý»¯²âÊÔ
- *
  * @author zhitao
  * @since 2015-07-06 23:08
  */
@@ -21,9 +19,9 @@ public class StringUtilJunit4TestCase {
 
     @Parameterized.Parameters()
     public static Iterable<Object[]> data() {
-        return Arrays.asList(new Object[][]{
-                {true, null}, {true, new String[]{null, null}}, {true, new String[]{""}}, {true, new String[]{"", ""}},
-                {false, new String[]{"123"}}, {true, new String[]{"123", ""}}, {false, new String[]{"123", "456"}}
+        return Arrays.asList(new Object[][] {
+                {true, null}, {true, new String[] {null, null}}, {true, new String[] {""}}, {true, new String[] {"", ""}},
+                {false, new String[] {"123"}}, {true, new String[] {"123", ""}}, {false, new String[] {"123", "456"}}
         });
     }
 
@@ -37,11 +35,6 @@ public class StringUtilJunit4TestCase {
 
     }
 
-    /**
-     * ²âÊÔ×Ö·û´®ÊÇ·ñÎª¿Õ
-     *
-     * @throws Exception
-     */
     @Test
     public void isStringNull() throws Exception {
         Assert.assertEquals(mExpected, StringUtil.isStringNull(mArgs));

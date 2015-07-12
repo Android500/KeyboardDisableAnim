@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Ä³Ð©³¡ºÏÏÂ£¬·½·¨»áÅ×³öÒì³££¬µ«ÊÇ²¢²»ÊÇËµÅ×³öÒì³£¾Í±íÊ¾·½·¨³öÏÖÎÊÌâ£¬±ÈÈç²ÎÊý²»ºÏ·¨Òì³££¬¾Í±íÊ¾²ÎÊý´«ÈëÓÐÎÊÌâ£¬·½·¨ÊÇÃ»ÓÐÎÊÌâµÄ£¬Òò´ËÎÒÃÇÐèÒª²¶×½ÕâÖÖ"Õý³£"µÄÒì³£
+ * æŸäº›åœºåˆä¸‹ï¼Œæ–¹æ³•ä¼šæŠ›å‡ºå¼‚å¸¸ï¼Œä½†æ˜¯å¹¶ä¸æ˜¯è¯´æŠ›å‡ºå¼‚å¸¸å°±è¡¨ç¤ºæ–¹æ³•å‡ºçŽ°é—®é¢˜ï¼Œæ¯”å¦‚å‚æ•°ä¸åˆæ³•å¼‚å¸¸ï¼Œå°±è¡¨ç¤ºå‚æ•°ä¼ å…¥æœ‰é—®é¢˜ï¼Œæ–¹æ³•æ˜¯æ²¡æœ‰é—®é¢˜çš„ï¼Œå› æ­¤æˆ‘ä»¬éœ€è¦æ•æ‰è¿™ç§"æ­£å¸¸"çš„å¼‚å¸¸
  * <p/>
- * ÎÞÂÛÊÇexpected»¹ÊÇexpect¶¼±íÊ¾ÆÚÍûÅ×³öµÄÒì³££¬
- * ¼ÙÈçÄ³Ò»·½·¨£¬µ±²ÎÊýÎªÄ³Ò»ÖµÊ±»áÅ×³öÒì³££¬
- * µÚÒ»ÖÖ·½·¨£º±ØÐëÎª¸Ã²ÎÊýµ¥¶ÀÐ´Ò»¸ö²âÊÔ·½·¨À´²âÊÔÒì³££¬¶øÎÞ·¨ÓëÆäËû²ÎÊýÖµÒ»Í¬Ð´ÔÚÒ»¸ö²âÊÔ·½·¨Àï£¬ËùÒÔÏÔµÃÀÛ×¸¡£
- * µÚ¶þÖÖ·½·¨£ºËäÈ»½â¾öÕâ¸öÎÊÌâ£¬µ«ÊÇÐ´·¨²»½ö·±ËöÒ²²»ÀûÓÚÀí½â¡£
- * µÚÈýÖÖ·½·¨£º²»½öÄÜ¶¯Ì¬¸ü¸ÄÆÚÍûÅ×³öµÄÒì³££¬Óë¶ÏÑÔÓï¾ä½áºÏµÄÒ²·Ç³£ºÃ£¬Òò´ËÍÆ¼öÊ¹ÓÃ¸Ã·½·¨À´²âÊÔÒì³£¡£
+ * æ— è®ºæ˜¯expectedè¿˜æ˜¯expectéƒ½è¡¨ç¤ºæœŸæœ›æŠ›å‡ºçš„å¼‚å¸¸ï¼Œ
+ * å‡å¦‚æŸä¸€æ–¹æ³•ï¼Œå½“å‚æ•°ä¸ºæŸä¸€å€¼æ—¶ä¼šæŠ›å‡ºå¼‚å¸¸ï¼Œ
+ * ç¬¬ä¸€ç§æ–¹æ³•ï¼šå¿…é¡»ä¸ºè¯¥å‚æ•°å•ç‹¬å†™ä¸€ä¸ªæµ‹è¯•æ–¹æ³•æ¥æµ‹è¯•å¼‚å¸¸ï¼Œè€Œæ— æ³•ä¸Žå…¶ä»–å‚æ•°å€¼ä¸€åŒå†™åœ¨ä¸€ä¸ªæµ‹è¯•æ–¹æ³•é‡Œï¼Œæ‰€ä»¥æ˜¾å¾—ç´¯èµ˜ã€‚
+ * ç¬¬äºŒç§æ–¹æ³•ï¼šè™½ç„¶è§£å†³è¿™ä¸ªé—®é¢˜ï¼Œä½†æ˜¯å†™æ³•ä¸ä»…ç¹çä¹Ÿä¸åˆ©äºŽç†è§£ã€‚
+ * ç¬¬ä¸‰ç§æ–¹æ³•ï¼šä¸ä»…èƒ½åŠ¨æ€æ›´æ”¹æœŸæœ›æŠ›å‡ºçš„å¼‚å¸¸ï¼Œä¸Žæ–­è¨€è¯­å¥ç»“åˆçš„ä¹Ÿéžå¸¸å¥½ï¼Œå› æ­¤æŽ¨èä½¿ç”¨è¯¥æ–¹æ³•æ¥æµ‹è¯•å¼‚å¸¸ã€‚
  *
  * @author zhitao
  * @since 2015-07-06 23:43
@@ -24,7 +24,7 @@ import java.util.List;
 public class ExceptionJunit4TestCase {
 
     /**
-     * µÚÒ»ÖÖÒì³£²¶×½²âÊÔ
+     * ç¬¬ä¸€ç§å¼‚å¸¸æ•æ‰æµ‹è¯•
      */
     @Test(expected = IndexOutOfBoundsException.class)
     public void empty() {
@@ -32,7 +32,7 @@ public class ExceptionJunit4TestCase {
     }
 
     /**
-     * µÚ¶þÖÖÒì³£²¶×½²âÊÔ
+     * ç¬¬äºŒç§å¼‚å¸¸æ•æ‰æµ‹è¯•
      */
     @Test
     public void testExceptionMessage() {
@@ -44,7 +44,7 @@ public class ExceptionJunit4TestCase {
         }
     }
 
-    // µÚÈýÖÖÒì³£²¶×½²âÊÔ
+    // ç¬¬ä¸‰ç§å¼‚å¸¸æ•æ‰æµ‹è¯•
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 

@@ -8,10 +8,22 @@ import java.math.BigDecimal;
  */
 public class MathUtil {
 
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static int sub(int a, int b) {
+        return a - b;
+    }
+
     public static float add1(float a, float b) {
         BigDecimal tempA = new BigDecimal(String.valueOf(a));
         BigDecimal tempB = new BigDecimal(String.valueOf(b));
         return tempA.add(tempB).floatValue();
+    }
+
+    public static float add2(float a, float b) {
+        return a + b;
     }
 
     public static float sub1(float a, float b) {
@@ -20,11 +32,8 @@ public class MathUtil {
         return tempA.subtract(tempB).floatValue();
     }
 
-    public static float add2(float a, float b) {
-        return a + b;
-    }
-
     public static float sub2(float a, float b) {
         return a - b;
     }
+
 }

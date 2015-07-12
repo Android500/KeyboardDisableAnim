@@ -62,7 +62,7 @@ public class UtilTestListener implements Runnable, TestListener {
     @Override
     public void startTest(Test test) {
         Log.i("test", String.format("%s 测试开始", test.getClass().getName()));
-        ++ mTotalTestCounts;
+        ++mTotalTestCounts;
 
     }
 }

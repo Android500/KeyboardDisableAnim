@@ -9,13 +9,6 @@ import android.content.pm.PackageInfo;
  */
 public class PkgUtil {
 
-    /**
-     * 取得当前应用的版本号
-     *
-     * @param context
-     *
-     * @return
-     */
     public static String getVersionName(Context context) {
         try {
             PackageInfo manager = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);

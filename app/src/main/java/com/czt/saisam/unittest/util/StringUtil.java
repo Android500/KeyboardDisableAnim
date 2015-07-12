@@ -6,13 +6,6 @@ package com.czt.saisam.unittest.util;
  */
 public class StringUtil {
 
-    /**
-     * 验证字符串是否为空
-     *
-     * @param args
-     *
-     * @return
-     */
     public static boolean isStringNull(String... args) {
         if (args == null) {
             return true;

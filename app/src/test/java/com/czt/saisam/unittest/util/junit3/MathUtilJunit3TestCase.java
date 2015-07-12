@@ -26,26 +26,12 @@ public class MathUtilJunit3TestCase extends TestCase {
         super.tearDown();
     }
 
-    /**
-     * 测试加法——同时测试是否正确与失败
-     *
-     * @throws Exception
-     */
     public void test_add() throws Exception {
         assertSame(2, MathUtil.add(1, 1));
         assertNotSame(1, MathUtil.add(1, 1));
     }
 
-
-    /**
-     * 测试减法——应该失败
-     *
-     * @throws Exception
-     */
     public void test_sub() throws Exception {
-        /**
-         * 这里的a，b的值会在{@link #setUp()} 方法中进行初始化
-         */
         assertEquals(3, MathUtil.sub(a, b));
         assertEquals(2, MathUtil.sub(a, b));
     }
