@@ -2,10 +2,7 @@ package com.czt.saisam.unittest.util.junit3;
 
 import com.czt.saisam.unittest.util.StringUtil;
 
-import junit.framework.Assert;
 import junit.framework.TestCase;
-
-import org.junit.Test;
 
 /**
  * @author zhitao
@@ -13,39 +10,18 @@ import org.junit.Test;
  */
 public class StringUtilJunit3TestCase extends TestCase {
 
-    @Test
-    public void test_isStringNull1() throws Exception {
-        Assert.assertEquals(true, StringUtil.isStringNull(null));
+    /**
+     * 测试字符串是否为空的方法,因为要模拟各种边界情况，这里就详细列出各个情况
+     *
+     * @throws Exception
+     */
+    public void test_isStringNull() throws Exception {
+        assertEquals(true, StringUtil.isStringNull(null));
+        assertEquals(true, StringUtil.isStringNull(null, null));
+        assertEquals(true, StringUtil.isStringNull(""));
+        assertEquals(true, StringUtil.isStringNull("", ""));
+        assertEquals(false, StringUtil.isStringNull("123"));
+        assertEquals(true, StringUtil.isStringNull("123", ""));
+        assertEquals(false, StringUtil.isStringNull("123", "345"));
     }
-
-    @Test
-    public void test_isStringNull2() throws Exception {
-        Assert.assertEquals(true, StringUtil.isStringNull(null, null));
-    }
-
-    @Test
-    public void test_isStringNull3() throws Exception {
-        Assert.assertEquals(true, StringUtil.isStringNull(""));
-    }
-
-    @Test
-    public void test_isStringNull4() throws Exception {
-        Assert.assertEquals(true, StringUtil.isStringNull("", ""));
-    }
-
-    @Test
-    public void test_isStringNull5() throws Exception {
-        Assert.assertEquals(false, StringUtil.isStringNull("123"));
-    }
-
-    @Test
-    public void test_isStringNull6() throws Exception {
-        Assert.assertEquals(true, StringUtil.isStringNull("123", ""));
-    }
-
-    @Test
-    public void test_isStringNull7() throws Exception {
-        Assert.assertEquals(false, StringUtil.isStringNull("123", "345"));
-    }
-
 }

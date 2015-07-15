@@ -1,5 +1,6 @@
 package com.czt.saisam.unittest.util.junit3;
 
+import junit.extensions.TestSetup;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
@@ -13,8 +14,19 @@ public class Junit3TestSuite extends TestSuite {
         TestSuite suite = new TestSuite(Junit3TestSuite.class);
 
         suite.addTestSuite(MathUtilJunit3TestCase.class);
+        suite.addTestSuite(AsyncTaskJunit3TestCase.class);
         suite.addTestSuite(StringUtilJunit3TestCase.class);
 
-        return suite;
+        TestSetup wrapper = new TestSetup(suite) {
+
+            protected void setUp() {
+                System.out.println("---Calling Global_setUp---");
+            }
+
+            protected void tearDown() {
+                System.out.println("---Calling Global_tearDown---");
+            }
+        };
+        return wrapper;
     }
 }
