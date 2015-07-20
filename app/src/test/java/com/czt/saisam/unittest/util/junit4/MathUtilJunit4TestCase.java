@@ -15,6 +15,7 @@ import org.junit.Test;
  * @author zhitao
  * @since 2015-07-13 00:17
  */
+
 public class MathUtilJunit4TestCase {
 
     private int a;
@@ -23,52 +24,59 @@ public class MathUtilJunit4TestCase {
 
     @BeforeClass
     public static void beforeClass() {
-        System.out.println("BeforeClass================");
+        System.out.println("---BeforeClass---");
     }
 
     @AfterClass
     public static void afterClass() {
-        System.out.println("AfterClass================");
+        System.out.println("---AfterClass---");
     }
 
     @Before
     public void beforeMethod() {
         a = 5;
         b = 2;
-        System.out.println("BeforeMethod================");
+        System.out.println("---BeforeMethod---");
     }
 
     @After
     public void afterMethod() {
-        System.out.println("AfterMethod================");
+        System.out.println("---AfterMethod---");
     }
 
+    /**
+     * 测试加法——同时测试是否正确与失败
+     *
+     * @throws Exception
+     */
     @Test
-    public void add1() throws Exception {
-        System.out.println("test_add================");
+    public void add() {
+        System.out.println("---add---");
         Assert.assertSame(2, MathUtil.add(1, 1));
         Assert.assertNotSame(1, MathUtil.add(1, 1));
     }
 
     @Test
-    @Ignore
-    public void add2() throws Exception {
-        System.out.println("test_add_ShouldBeFailed================");
-        Assert.assertSame(3, MathUtil.add(1, 1));
+    public void sub() {
+        System.out.println("---sub---");
+        // 这里的a，b的值会在 setUp() 方法中进行初始化
+        Assert.assertEquals(3, MathUtil.sub(a, b));
+        Assert.assertEquals(2, MathUtil.sub(a, b));
     }
 
     @Test
-    public void sub() throws Exception {
-        System.out.println("test_sub================");
-        Assert.assertEquals(3, MathUtil.sub(a, b));
+    public void sub_ignore() {
+        System.out.println("---sub_ignore---");
+        Assert.assertEquals(2, MathUtil.sub(a, b));
     }
 
-    @Test(timeout = 1000)
+    @Test(expected = NumberFormatException.class)
     @Ignore
-    public void sub_wait() throws Exception {
-        System.out.println("test_sub_wait================");
-        Thread.sleep(2000);
-        Assert.assertEquals(3, MathUtil.sub(a, b));
+    public void getDecimalFromString() {
+        System.out.println("---getDecimalFromString---");
+        Assert.assertEquals(456, MathUtil.getDecimalFromString("123.456d"));
+        Assert.assertEquals(0, MathUtil.getDecimalFromString("abc"));
+        Assert.assertEquals(0, MathUtil.getDecimalFromString("123"));
     }
 
 }

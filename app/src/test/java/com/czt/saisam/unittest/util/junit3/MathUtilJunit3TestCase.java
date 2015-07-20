@@ -60,7 +60,7 @@ public class MathUtilJunit3TestCase extends TestCase {
             assertEquals(0, MathUtil.getDecimalFromString("abc"));
             assertEquals(0, MathUtil.getDecimalFromString("123"));
         } catch (NumberFormatException e) {
-
+            assertNotNull(e.getMessage());
         }
     }
 
