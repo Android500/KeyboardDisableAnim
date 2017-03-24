@@ -1,5 +1,7 @@
 package com.czt.saisam.unittest.util;
 
+import com.czt.saisam.unittest.android.PkgUtilAndroidTestCase;
+
 import junit.framework.TestSuite;
 
 /**
@@ -11,5 +13,7 @@ public class UtilTestSuite extends TestSuite {
     public UtilTestSuite() {
         super();
         addTestSuite(MathUtilTestCase.class);
+        addTestSuite(PkgUtilAndroidTestCase.class);
+
     }
 }
